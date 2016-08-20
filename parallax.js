@@ -93,6 +93,10 @@
 
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
       if (this.imageSrc && this.iosFix && !this.$element.is('img')) {
+        if (this.positionXMobile) {
+          this.position = this.positionXMobile + ' ' + this.positionY + (isNaN(this.positionY)? '' : 'px');
+        }
+
         this.$element.css({
           backgroundImage: 'url(' + this.imageSrc + ')',
           backgroundSize: 'cover',
@@ -104,6 +108,10 @@
 
     if (navigator.userAgent.match(/(Android)/)) {
       if (this.imageSrc && this.androidFix && !this.$element.is('img')) {
+        if (this.positionXMobile) {
+          this.position = this.positionXMobile + ' ' + this.positionY + (isNaN(this.positionY)? '' : 'px');
+        }
+
         this.$element.css({
           backgroundImage: 'url(' + this.imageSrc + ')',
           backgroundSize: 'cover',
